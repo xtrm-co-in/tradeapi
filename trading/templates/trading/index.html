@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block headblock %}
+<script src="{% static "assets/js/init_login.js" %}"></script>
+<!-- <script>
+            if(!g_auth) {
+            window.location.replace("{% url 'login' %}");
+            }
+
+            
+</script> -->
+{% endblock %}
+{% block blockbg %}{% endblock %}
+{% block content %}
+<!-- <body> -->
+    <div class="header navbar navbar-inverse ">
+        <div class="navbar-inner">
+            <div class="header-seperation">
+                <ul class="nav pull-left notifcation-center visible-xs visible-sm">
+                    <li class="dropdown">
+                        <a href="#main-menu" data-webarch="toggle-left-side">
+                            <i class="material-icons">menu</i>
+                        </a>
+                    </li>
+                </ul>
+                <h3 class="company-title" id="product-title"><b>Trade</b>Bazix</h3>
+                <!--<img src="assets/img/logo.png" class="img-responsive company-title"/>-->
+                <ul class="nav pull-right notifcation-center">
+                    <li class="dropdown visible-xs visible-sm">
+                        <a href="" class="logout"><i class="fa fa-sign-out"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header-quick-nav">
+                <div class="pull-left">
+                    <ul class="nav quick-section">
+                        <li class="quicklinks">
+                            <a href="#" class="nav-button" id="layout-condensed-toggle">
+                                <i class="material-icons">menu</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <ul class="nav quick-section ">
+                        <li class="quick-link" style="margin-top:9px;">
+                            <span href="#" class="welcome-title"></span>
+                        </li>
+                        <li class="quick-link">
+                            <a href="" class="logout"><i class="fa fa-sign-out"></i>&nbsp;Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="page-container row">
+    <div class="page-sidebar " id="main-menu">
+        <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+        <br>
+        <ul>
+            <li class="start  open active "> <a href="#"><i class="material-icons">home</i> <span class="title">Reports</span> <span class="selected"></span> <span id="arrow" class="arrow  open "></span> </a>
+                <ul class="sub-menu" id="_rpt">
+                    
+                </ul>
+            </li> 
+        </ul>
+        </div>
+    </div>
+
+    <a href="#" class="scrollup">Scroll</a>
+    <div class="footer-widget">
+     
+    <div class="pull-right">
+        <div class="social">
+            <ul>
+                    <li>
+                            <a href="{% url 'password-change' %}" class="password"><i class="fa fa-key" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Change Password"></i></a>   
+                        </li>
+                <li>
+                    <a href="https://www.facebook.com/extremesolutions.in" class="facebook"><i class="fa fa-facebook-square" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="LIke us on facebook"></i></a>   
+                </li>
+                <li>
+                    <a href="http://xtrm.co.in/" class="site-link"><i class="fa fa-external-link" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Visit our website"></i></a>
+                </li> 
+                <li>
+                    <a href="https://youtube.com/extremesolutionsgandhidham" class="youtube"><i class="fa fa-youtube-square" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Watch video tutorials on youtube"></i></a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="content" id="pagearea" style="visibility:hidden">
+
+
+            <!--for small (mobile) sreen welcome message-->
+            <div class="row-fluid for-small-screen">
+                <div class="span12">
+                    <div class="grid simple">
+                        <div class="grid-body" style="padding:15px;">
+                            <center><a href="#" class="welcome-title"><span class="sub-title">Welcome :</span> test@gmail.com</a></center>
+                        </div>
+                    </div>
+                </div>            
+            </div> 
+
+            
+            <!--for grid title and filters-->
+            <div class="row-fluid" style="margin-bottom:0px;">
+                <div class="span12">
+                    <div class="grid simple" style="margin-bottom:0px;">
+                        <div class="grid-body" style="border-bottom:none;padding:10px;">
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="title">
+                                    <h4></h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-xs-12">
+                                <div class="filter-nav pull-right">
+                                        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                                <i class="fa fa-calendar"></i>&nbsp;
+                                                <span></span> <i class="fa fa-caret-down"></i>
+                                            </div>                                            
+                                    <!-- <ul>
+                                        <li>
+                                            From&nbsp;<input type="date" id="str_date" class="input-sm">
+                                        </li>
+                                        <li>
+                                            To &nbsp;<input type="date" id="end_date" class="input-sm">
+                                        </li>
+                                        <li>
+                                            <a href="#" class="go-btn"><span style="margin-top:5px!important;">Go</span></a>
+                                        </li>         
+                                    </ul>      -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div> 
+                
+                
+            <!--for main data table-->     
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="grid simple ">
+                        <div class="grid-body">
+                             <div class="table-responsive" id="workspace"> 
+                                
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <br/><br/>
+        <footer>
+                <div class="row-fluid" style="padding-right: 0px;">
+                    <div class="container collapse" id="ShowHide">
+                        <div class="col-sm-2 col-xs-6">
+                            <div class="sale">
+                                <h3>Sales</h3>
+                                <p>9898 036208<br>sales@xtrm.co.in</p>
+                            </div> 
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <h3>Support</h3>
+                            <p>9662 623471, 2836 227096<br>support@xtrm.co.in</p>
+                        </div>
+                        <div class="col-sm-6 col-xs-12" style="padding-right:0px;">
+                            <div class="logo_section">
+                                <a href="http://xtrm.co.in/"><img src="{% static 'assets/img/bottom_logo.png' %}" class="img-responsive" /></a>
+                            </div>
+                        </div>     
+                    </div>
+                    <div class="container" style="padding-left:0px;padding-right:0px;">
+                        <div class="footer-bottom">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="client-title">
+                                    Client Company Name Here
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-12" style="padding-right:0px;">
+                                <div class="footer-link">
+                                    <span href="#ShowHide" data-toggle="collapse">Powered by EXTREME SOLUTIONS</span>
+                                </div> 
+                            </div>
+                            <div class="col-sm-1 col-xs-12"></div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $(".welcome-title").html("<span class='sub-title'>Welcome</span>&nbsp;" + g_auth.email);
+  var apixpath= 'menuitems/';
+//   document.title=productname;
+  $.ajax( {
+      url: apixpath,
+      beforeSend: function(request) {
+        request.setRequestHeader("Authorization", "Token " + g_auth.key);
+},
+      dataType: "json",
+      "success": function ( json ) {
+        var prnt="";
+        var ml=""
+        for(var x=0;x<json.response.length;x++)
+        {
+          var o=json.response[x];
+          if(prnt!==o.menualias && prnt!="")
+          {
+                $("#" + prnt).append(ml);                 
+          }
+          ml+='<li><a href="#" class="report" data-menuapi="' + o.menuapi + '">' + o.menusubtitle + '</a></li>';
+          prnt=o.menualias;
+        }
+        $("#" + prnt).append(ml);
+      },
+    error: function(xhr,status,error){
+    //   alert(error);
+      g_auth=null;
+      initLogin();
+        // window.location.replace(rooturl);
+    }
+  });
+$("body").on("click",".report",function(e){
+  e.preventDefault();
+  fileTitle=$(this).text();
+  document.title=productname + " | " + fileTitle;
+  $('.title h4').text(fileTitle);
+  apipath=rooturl + $(this).attr("data-menuapi");
+  setRange();
+  setTable();
+}
+);
+$('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+  setTable();
+});
+    });
+    $(".logout").click(function(event)
+    {
+        event.preventDefault();
+        // alert(g_urls.logout);
+        // alert(g_auth.key);
+        $.ajax({
+            type: "POST",
+            datatype:"json",
+            url: g_urls.logout,
+            // Required Only if not rendered through django or rendered through desktop/mobile app
+            // beforeSend: function(request) {
+            //            request.setRequestHeader("Authorization", "Token " + g_auth.key);
+            //        },
+                   data: {
+                       csrfmiddlewaretoken: g_csrftoken
+                   },
+             
+            success: function(result)
+            {
+                   g_auth = null;
+                   initLogin();
+            },
+            error: function(xhr,status,error){ 
+                        g_auth = null;
+                        initLogin();
+                    } 
+ 
+             
+        });
+               return false;
+               
+            });
+        </script>
+{% endblock %}

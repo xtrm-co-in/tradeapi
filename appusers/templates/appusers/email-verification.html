@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block blockbg %}
+class="gray-bg"
+{% endblock %}
+{% block content %}
+<!-- <body class="gray-bg"> -->      
+<div class="col-sm-4 col-sm-offset-4 top-space">
+        <div class="form-body animated fadeInDown">  
+              <h1 class="text-center">Email Verification</h1>
+        </br>
+              <form action="{% url 'rest_verify_email' %}" method="post" accept-charset="utf-8" class="m-t ajax-post" role="form">
+                    {% csrf_token %}
+                  <div class="form-group">
+                        <input name="key" type="hidden" id="key">
+                  </div>
+                  <button type="submit" data-theme="g" name="submit" value="submit" class="btn btn-primary block full-width m-b">Confirm</button>
+              </form>
+          </br>
+              <p class="m-t text-center"> <small>Extreme Solutions All Rights Reserved &copy; 2019</small> </p>
+        </div>
+      </div>
+      <script type="text/javascript">
+            var url_elements = window.location.pathname.split('/');
+            if (url_elements.length == 5){
+                var token = url_elements[url_elements.length - 2];
+                if (token !== undefined){
+                    $('input[name=key]').val(token);
+                }
+            }
+          var error_response = function(data,msg){
+//   msgError("Error","Error activating your account, Please try again later !!! " + data.responseText);
+msgError("Error activating your account, Please try again later !!! ","Activation Error");
+console.log(data.responseText);
+}
+var susccess_response = function(data,msg){
+  // $('.api-response').html("API Response: OK<br/>Content: " + JSON.stringify(data));
+  // alert("An error occured, Operation failed !");
+  window.location.replace("{% url 'login' %}");
+}
+      
+        </script>
+{% endblock %}

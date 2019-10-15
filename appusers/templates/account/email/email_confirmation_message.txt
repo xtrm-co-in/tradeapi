@@ -1,0 +1,15 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Hello, {{ user_display }}!
+
+To finish setting up your account, we just need to make sure this email address is yours.
+
+To verify your email address, go to {{ activate_url }}
+
+Your login password is pdwXg5983qbct, For security reasons, Please change your password as soon as you login.
+
+If you didn't request this code, you can safely ignore this email. Someone else might have typed your email address by mistake.
+{% endblocktrans %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thanks
+
+*** This message is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged information. If you have received this message in error, please notify the sender immediately and delete this message from your system ***
+{% endblocktrans %}
+{% endautoescape %}
