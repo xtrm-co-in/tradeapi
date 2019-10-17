@@ -11,7 +11,7 @@ class Menuitems(models.Model):
     menuisreport=models.IntegerField()
     # menuHasDateRange=models.IntegerField()
     class Meta:
-        managed=False
+#         managed=False
         db_table='menuitems'
     def __str__(self):
         return self.menusubtitle
@@ -44,7 +44,7 @@ class Sales(models.Model):
     debit=models.CharField(max_length=255)
     author=models.ForeignKey(appusers_model.User,on_delete=models.CASCADE)
     class Meta:
-        managed=False
+#         managed=False
         db_table='sales'
     def __str__(self):
         return self.uniquekey
